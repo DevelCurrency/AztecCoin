@@ -3,7 +3,7 @@ AztecCoin development team is present!
 
 [![Build Status](https://api.travis-ci.org/DevelCurrency/AztecCoin.svg?branch=master)](https://travis-ci.org/DevelCurrency/AztecCoin)
 
-azteccoin - Crypto currency is based on PoW / PoS.
+AztecCoin - Crypto currency is based on pure PoS.
 ===========================
 
 Algorithm: scrypt <BR>
@@ -52,8 +52,6 @@ Ritual calendar 260 days 20 weeks / 13 days in each week
 11 - reward 0.052 * 0.3 Osomatli - Monkey<BR>
 12 - reward 0.052 * 0.2 Malinally - Grass / Plant<BR>
 13 - reward 0.052 * 0.1 Acatl - Reed<BR>
-
-
 
 Minimum age of coin: 12 hours <BR>
 RPC port: 5959 <BR>
