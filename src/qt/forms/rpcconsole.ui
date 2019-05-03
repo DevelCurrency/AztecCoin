@@ -13,9 +13,6 @@
   <property name="windowTitle">
    <string>azteccoin - Debug window</string>
   </property>
-  <property name="styleSheet">
-   <string notr="true">background-image: url(:/images/bkg);</string>
-  </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>
     <widget class="QTabWidget" name="tabWidget">
@@ -23,7 +20,7 @@
       <string notr="true"/>
      </property>
      <property name="currentIndex">
-      <number>1</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="tab_info">
       <property name="styleSheet">
@@ -376,9 +373,6 @@
          <property name="toolTip">
           <string>Open the azteccoin debug log file from the current data directory. This can take a few seconds for large log files.</string>
          </property>
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(106, 131, 154);</string>
-         </property>
          <property name="text">
           <string>&amp;Open</string>
          </property>
@@ -407,9 +401,6 @@
         <widget class="QPushButton" name="showCLOptionsButton">
          <property name="toolTip">
           <string>Show the azteccoin-Qt help message to get a list with possible azteccoin command-line options.</string>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(106, 131, 154);</string>
          </property>
          <property name="text">
           <string>&amp;Show</string>
@@ -480,11 +471,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit">
-           <property name="styleSheet">
-            <string notr="true">background-image: url(:/images/gr);</string>
-           </property>
-          </widget>
+          <widget class="QLineEdit" name="lineEdit"/>
          </item>
          <item>
           <widget class="QPushButton" name="clearButton">
@@ -496,10 +483,6 @@
            </property>
            <property name="toolTip">
             <string>Clear console</string>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">background-color: rgb(106, 131, 154);
-background-image: url(:/images/bgbfree);</string>
            </property>
            <property name="text">
             <string/>
@@ -535,18 +518,12 @@ background-image: url(:/images/bgbfree);</string>
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
-           <property name="styleSheet">
-            <string notr="true">background-image: url(:/images/bgbfree);</string>
-           </property>
           </widget>
          </item>
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout_2">
            <item>
             <widget class="QSlider" name="sldGraphRange">
-             <property name="styleSheet">
-              <string notr="true">background-image: url(:/images/bgbfree);</string>
-             </property>
              <property name="minimum">
               <number>1</number>
              </property>
@@ -582,10 +559,6 @@ background-image: url(:/images/bgbfree);</string>
            </item>
            <item>
             <widget class="QPushButton" name="btnClearTrafficGraph">
-             <property name="styleSheet">
-              <string notr="true">background-color: rgb(106, 131, 154);
-background-image: url(:/images/bgbfree);</string>
-             </property>
              <property name="text">
               <string>&amp;Clear</string>
              </property>

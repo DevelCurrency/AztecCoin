@@ -14,7 +14,7 @@
    <string>Address Book</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-image: url(:/images/bkg);</string>
+   <string notr="true">background-image: url(:/images/bgb);</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -42,7 +42,7 @@
       <string>Double-click to edit address or label</string>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(106, 131, 154);</string>
+      <string notr="true"/>
      </property>
      <property name="tabKeyNavigation">
       <bool>false</bool>
@@ -69,8 +69,7 @@
         <string>Create a new address</string>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(106, 131, 154);
-background-image: url(:/images/bgbfree);</string>
+        <string notr="true"/>
        </property>
        <property name="text">
         <string>&amp;New Address</string>
@@ -83,7 +82,7 @@ background-image: url(:/images/bgbfree);</string>
         <string>Copy the currently selected address to the system clipboard</string>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(106, 131, 154);background-image: url(:/images/bgbfree);</string>
+        <string notr="true"/>
        </property>
        <property name="text">
         <string>&amp;Copy Address</string>
@@ -93,7 +92,7 @@ background-image: url(:/images/bgbfree);</string>
      <item>
       <widget class="QPushButton" name="showQRCode">
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(106, 131, 154);background-image: url(:/images/bgbfree);</string>
+        <string notr="true"/>
        </property>
        <property name="text">
         <string>Show &amp;QR Code</string>
@@ -106,7 +105,7 @@ background-image: url(:/images/bgbfree);</string>
         <string>Sign a message to prove you own a azteccoin address</string>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(106, 131, 154);background-image: url(:/images/bgbfree);</string>
+        <string notr="true"/>
        </property>
        <property name="text">
         <string>Sign &amp;Message</string>
@@ -119,7 +118,7 @@ background-image: url(:/images/bgbfree);</string>
         <string>Verify a message to ensure it was signed with a specified azteccoin address</string>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(106, 131, 154);background-image: url(:/images/bgbfree);</string>
+        <string notr="true"/>
        </property>
        <property name="text">
         <string>&amp;Verify Message</string>
@@ -132,7 +131,7 @@ background-image: url(:/images/bgbfree);</string>
         <string>Delete the currently selected address from the list</string>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(106, 131, 154);background-image: url(:/images/bgbfree);</string>
+        <string notr="true"/>
        </property>
        <property name="text">
         <string>&amp;Delete</string>
@@ -161,8 +160,7 @@ background-image: url(:/images/bgbfree);</string>
         </sizepolicy>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-image: url(:/images/bgbfree);
-background-color: rgb(106, 131, 154);</string>
+        <string notr="true"/>
        </property>
        <property name="standardButtons">
         <set>QDialogButtonBox::Ok</set>

@@ -13,9 +13,6 @@
   <property name="windowTitle">
    <string>Signatures - Sign / Verify a Message</string>
   </property>
-  <property name="styleSheet">
-   <string notr="true">background-image: url(:/images/bkg);</string>
-  </property>
   <property name="modal">
    <bool>true</bool>
   </property>
@@ -23,7 +20,7 @@
    <item>
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="tabSignMessage">
       <attribute name="title">
@@ -53,10 +50,6 @@
            <property name="toolTip">
             <string>The address to sign the message with (e.g. JgZaH1DdikpMTYc2x1Xb6eFBkKGibjmPb9)</string>
            </property>
-           <property name="styleSheet">
-            <string notr="true">background-image: url(:/images/bgbfree);
-background-color: rgb(106, 131, 154);</string>
-           </property>
            <property name="maxLength">
             <number>34</number>
            </property>
@@ -66,10 +59,6 @@ background-color: rgb(106, 131, 154);</string>
           <widget class="QPushButton" name="addressBookButton_SM">
            <property name="toolTip">
             <string>Choose an address from the address book</string>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">background-color: rgb(106, 131, 154);
-background-image: url(:/images/bgbfree);</string>
            </property>
            <property name="text">
             <string/>
@@ -90,10 +79,6 @@ background-image: url(:/images/bgbfree);</string>
           <widget class="QPushButton" name="pasteButton_SM">
            <property name="toolTip">
             <string>Paste address from clipboard</string>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">background-color: rgb(106, 131, 154);
-background-image: url(:/images/bgbfree);</string>
            </property>
            <property name="text">
             <string/>
@@ -131,9 +116,6 @@ background-image: url(:/images/bgbfree);</string>
              <italic>true</italic>
             </font>
            </property>
-           <property name="styleSheet">
-            <string notr="true">background-color: rgb(106, 131, 154);</string>
-           </property>
            <property name="readOnly">
             <bool>true</bool>
            </property>
@@ -143,10 +125,6 @@ background-image: url(:/images/bgbfree);</string>
           <widget class="QPushButton" name="copySignatureButton_SM">
            <property name="toolTip">
             <string>Copy the current signature to the system clipboard</string>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">background-image: url(:/images/bgbfree);
-background-color: rgb(106, 131, 154);</string>
            </property>
            <property name="text">
             <string/>
@@ -169,10 +147,6 @@ background-color: rgb(106, 131, 154);</string>
            <property name="toolTip">
             <string>Sign the message to prove you own this azteccoin address</string>
            </property>
-           <property name="styleSheet">
-            <string notr="true">background-color: rgb(106, 131, 154);
-background-image: url(:/images/bgbfree);</string>
-           </property>
            <property name="text">
             <string>&amp;Sign Message</string>
            </property>
@@ -189,10 +163,6 @@ background-image: url(:/images/bgbfree);</string>
           <widget class="QPushButton" name="clearButton_SM">
            <property name="toolTip">
             <string>Reset all sign message fields</string>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">background-color: rgb(106, 131, 154);
-background-image: url(:/images/bgbfree);</string>
            </property>
            <property name="text">
             <string>Clear &amp;All</string>
@@ -286,9 +256,6 @@ background-image: url(:/images/bgbfree);</string>
            <property name="toolTip">
             <string>The address the message was signed with (e.g. JgZaH1DdikpMTYc2x1Xb6eFBkKGibjmPb9)</string>
            </property>
-           <property name="styleSheet">
-            <string notr="true">background-color: rgb(106, 131, 154);</string>
-           </property>
            <property name="maxLength">
             <number>34</number>
            </property>
@@ -298,10 +265,6 @@ background-image: url(:/images/bgbfree);</string>
           <widget class="QPushButton" name="addressBookButton_VM">
            <property name="toolTip">
             <string>Choose an address from the address book</string>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">background-color: rgb(106, 131, 154);
-background-image: url(:/images/bgbfree);</string>
            </property>
            <property name="text">
             <string/>
@@ -324,11 +287,7 @@ background-image: url(:/images/bgbfree);</string>
         <widget class="QPlainTextEdit" name="messageIn_VM"/>
        </item>
        <item>
-        <widget class="QValidatedLineEdit" name="signatureIn_VM">
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(106, 131, 154);</string>
-         </property>
-        </widget>
+        <widget class="QValidatedLineEdit" name="signatureIn_VM"/>
        </item>
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_2_VM">
@@ -336,10 +295,6 @@ background-image: url(:/images/bgbfree);</string>
           <widget class="QPushButton" name="verifyMessageButton_VM">
            <property name="toolTip">
             <string>Verify the message to ensure it was signed with the specified azteccoin address</string>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">background-color: rgb(106, 131, 154);
-background-image: url(:/images/bgbfree);</string>
            </property>
            <property name="text">
             <string>&amp;Verify Message</string>
@@ -357,10 +312,6 @@ background-image: url(:/images/bgbfree);</string>
           <widget class="QPushButton" name="clearButton_VM">
            <property name="toolTip">
             <string>Reset all verify message fields</string>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">background-color: rgb(106, 131, 154);
-background-image: url(:/images/bgbfree);</string>
            </property>
            <property name="text">
             <string>Clear &amp;All</string>

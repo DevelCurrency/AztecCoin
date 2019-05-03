@@ -14,7 +14,7 @@
    <string>Options</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-image: url(:/images/bkg);</string>
+   <string notr="true"/>
   </property>
   <property name="modal">
    <bool>true</bool>
@@ -23,13 +23,13 @@
    <item>
     <widget class="QTabWidget" name="tabWidget">
      <property name="styleSheet">
-      <string notr="true">background-image: url(:/images/bkg);</string>
+      <string notr="true"/>
      </property>
      <property name="tabPosition">
       <enum>QTabWidget::North</enum>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>3</number>
      </property>
      <widget class="QWidget" name="tabMain">
       <attribute name="title">
@@ -229,7 +229,7 @@
             <string>IP address of the proxy (e.g. 127.0.0.1)</string>
            </property>
            <property name="styleSheet">
-            <string notr="true">background-color: rgb(106, 131, 154);</string>
+            <string notr="true"/>
            </property>
           </widget>
          </item>
@@ -261,7 +261,7 @@
             <string>Port of the proxy (e.g. 9050)</string>
            </property>
            <property name="styleSheet">
-            <string notr="true">background-color: rgb(106, 131, 154);</string>
+            <string notr="true"/>
            </property>
           </widget>
          </item>
@@ -529,7 +529,7 @@
      <item>
       <widget class="QPushButton" name="okButton">
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(106, 131, 154);background-image: url(:/images/bgbfree);</string>
+        <string notr="true"/>
        </property>
        <property name="text">
         <string>&amp;OK</string>
@@ -539,7 +539,7 @@
      <item>
       <widget class="QPushButton" name="cancelButton">
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(106, 131, 154);background-image: url(:/images/bgbfree);</string>
+        <string notr="true"/>
        </property>
        <property name="text">
         <string>&amp;Cancel</string>
@@ -552,7 +552,7 @@
      <item>
       <widget class="QPushButton" name="applyButton">
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(106, 131, 154);background-image: url(:/images/bgbfree);</string>
+        <string notr="true"/>
        </property>
        <property name="text">
         <string>&amp;Apply</string>
@@ -574,14 +574,14 @@
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>QValueComboBox</class>
-   <extends>QComboBox</extends>
-   <header>qvaluecombobox.h</header>
-  </customwidget>
-  <customwidget>
    <class>QValidatedLineEdit</class>
    <extends>QLineEdit</extends>
    <header>qvalidatedlineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QValueComboBox</class>
+   <extends>QComboBox</extends>
+   <header>qvaluecombobox.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

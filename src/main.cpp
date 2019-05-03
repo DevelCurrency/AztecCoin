@@ -39,15 +39,13 @@ CBigNum bnProofOfStakeLimit(~uint256(0) >> 20);
 CBigNum bnProofOfStakeLimitV2(~uint256(0) >> 48);
 
 int LAST_POW_BLOCK;
-int LAST_POS_BLOCK;
 
 unsigned int nStakeMinAge; // min age is 8 hours
 unsigned int nModifierInterval = 10 * 60; // time to elapse before new modifier is computed
 
-int nCoinbaseMaturity = 80;
+int nCoinbaseMaturity = 79;
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
-int stepPOW_POS=-1;
 
 uint256 nBestChainTrust = 0;
 uint256 nBestInvalidTrust = 0;
@@ -961,155 +959,152 @@ unsigned int GetnStakeMinAge()
     return nStakeMinAge;
 }
 
-int64_t CalculateRewardCivic()
+int CalculateRewardCivic()
 {
-    int CivicReward; //расчет выплат
-    int64_t FirstBlockInYear; //время первого блока в новом году расчетов
-    int64_t timeFirstBlock = pindexGenesisBlock->nTime; //генезис тайм
-    int64_t OneYear = timeFirstBlock + (365 * 24 * 60 * 60); //Один год со дня создания генезиса в эпохтайм
-    int64_t CurrentTime = GetAdjustedTime(); // текущее время
-    int64_t timeCurrBlock =pindexBest->nTime; //время последнего блока в сети
-    int64_t calctime = (timeCurrBlock -  timeFirstBlock) / OneYear; //количество прошедших лет
-    if (pindexBest->nTime <= OneYear)//если время текущего блока меньше чем генезистайм +1 год
-    {
-        FirstBlockInYear=pindexGenesisBlock->nTime; //первый блок года начнется с этой даты
-    }else //если время блока больше чем время создания генезиса +1 год
-    {
-        FirstBlockInYear=pindexGenesisBlock->nTime + (365 * 24 * 60 * 60 * calctime); //первый блок года  = генезистайм+ время 1 года* на количество прошедших лет
-    }
-    printf("This is my_int: %I64d\n", FirstBlockInYear);
-    printf("This is my_int: %I64d\n", calctime);
-    int64_t oneDay = 86400; //один день в секундах
-    int64_t DayInMonth = oneDay * 20; //количество дней в одном месяце в секундах
-    int64_t FromFirstBlock = CurrentTime - FirstBlockInYear; //время с первого блока года до текущего момента в секундах
+    int CivicReward;
+    int64_t FirstBlockYear;
+    int64_t TimeFirstBlockinYear;
+    double MonthNum;
+    int64_t timeFirstBlock = pindexGenesisBlock->GetBlockTime();
+    int64_t OneYear = 365 * 24 * 60 * 60;
+    int64_t oneDay = 86400;
+    int64_t OneMonthDays = oneDay * 20;
+        if ((pindexBest->GetBlockTime() -  timeFirstBlock) <= OneYear)
+        {
+            FirstBlockYear=pindexGenesisBlock->GetBlockTime();
+        }else
+        {
+            int64_t calctime = (pindexBest->GetBlockTime() - timeFirstBlock) / OneYear;
+            FirstBlockYear=pindexGenesisBlock->GetBlockTime() + (OneYear * calctime);
+        }
+        TimeFirstBlockinYear = pindexBest->GetBlockTime() - FirstBlockYear;
+        MonthNum = TimeFirstBlockinYear/OneMonthDays;
 
-    double MonthNum = FromFirstBlock/DayInMonth; //расчет номера месяца = время прошедшее со дня создания первого блока / на количество дней в месяце
-
-    printf("Номер месяца", MonthNum);
-
-    if (MonthNum > 0 && MonthNum <= 1) //1 месяц
+    if (MonthNum > 0 && MonthNum <= 1)
     {
-        CivicReward = 52 * CENT * (18/10);
+        CivicReward =  93;
     }else if (MonthNum > 1 && MonthNum <= 2 )
     {
-        CivicReward = 52 * CENT * (17/10);
+        CivicReward =  88;
     }else if (MonthNum > 2 && MonthNum <= 3)
     {
-        CivicReward = 52 * CENT * (16/10);
+        CivicReward =  83;
     }else if (MonthNum > 3 && MonthNum <= 4)
     {
-        CivicReward = 52 * CENT * (15/10);
+        CivicReward =  78;
     }else if (MonthNum > 4 && MonthNum <= 5)
     {
-        CivicReward = 52 * CENT * (14/10);
+        CivicReward =  72;
     }else if (MonthNum > 5 && MonthNum <= 6)
     {
-        CivicReward = 52 * CENT * (13/10);
+        CivicReward =  67;
     }else if (MonthNum > 6 && MonthNum <= 7)
     {
-        CivicReward = 52 * CENT * (12/10);
+        CivicReward =  62;
     }else if (MonthNum > 7 && MonthNum <= 8)
     {
-        CivicReward = 52 * CENT * (11/10);
+        CivicReward =  57;
     }else if (MonthNum > 8 && MonthNum <= 9)
     {
-        CivicReward = 52 * CENT * (10/10);
+        CivicReward =  52;
     }else if (MonthNum > 9 && MonthNum <= 10)
     {
-        CivicReward = 52 * CENT * (9/10);
+        CivicReward =  46;
     }else if (MonthNum > 10 && MonthNum <= 11)
     {
-        CivicReward = 52 * CENT * (8/10);
+        CivicReward =  41;
     }else if (MonthNum > 11 && MonthNum <= 12)
     {
-        CivicReward = 52 * CENT * (7/10);
+        CivicReward =  36;
     }else if (MonthNum > 12 && MonthNum <= 13)
     {
-        CivicReward = 52 * CENT * (6/10);
+        CivicReward =  31;
     }else if (MonthNum > 13 && MonthNum <= 14)
     {
-        CivicReward = 52 * CENT * (5/10);
+        CivicReward =  26;
     }else if (MonthNum > 14 && MonthNum <= 15)
     {
-        CivicReward = 52 * CENT * (4/10);
+        CivicReward =  20;
     }else if (MonthNum > 15 && MonthNum <= 16)
     {
-        CivicReward = 52 * CENT * (3/10);
+        CivicReward =  15;
     }else if (MonthNum > 16 && MonthNum <= 17)
     {
-        CivicReward = 52 * CENT * (2/10);
+        CivicReward =  10;
     }else if (MonthNum > 17 && MonthNum <= 18)
     {
-        CivicReward = 52 * CENT * (1/10);
+        CivicReward =  5;
+    }else
+    {
+        CivicReward =  3;
     }
     return CivicReward;
 }
 
-int64_t CalculateRewardRitual()
+int CalculateRewardRitual()
 {
-    int RitualReward; //расчет выплат
-    int64_t FirstBlockInYear; //время первого блока в новом году расчетов
-    int64_t timeFirstBlock = pindexGenesisBlock->nTime; //генезис тайм
-    int64_t OneYear = timeFirstBlock + (260 * 24 * 60 * 60); //Один год со дня создания генезиса в эпохтайм
-    int64_t CurrentTime = GetAdjustedTime(); // текущее время
-    int64_t timeCurrBlock =pindexBest->nTime; //время последнего блока в сети
-    int64_t calctime = (timeCurrBlock -  timeFirstBlock) / OneYear; //количество прошедших лет
-    if (pindexBest->nTime <= OneYear)//если время текущего блока меньше чем генезистайм +1 год
+    int RitualReward;
+    int64_t FirstBlockInCycle;
+    double DayNum;
+    int64_t timeFirstBlock = pindexGenesisBlock->GetBlockTime();
+    int64_t oneDay = 86400;
+    int64_t fullCycle = oneDay * 13;
+    if ((pindexBest->GetBlockTime() -  timeFirstBlock) <= fullCycle)
     {
-        FirstBlockInYear=pindexGenesisBlock->nTime; //первый блок года начнется с этой даты
-    }else //если время блока больше чем время создания генезиса +1 год
+        FirstBlockInCycle=pindexGenesisBlock->GetBlockTime();
+    }else
     {
-        FirstBlockInYear=pindexGenesisBlock->nTime + (365 * 24 * 60 * 60 * calctime); //первый блок года  = генезистайм+ время 1 года* на количество прошедших лет
+        int64_t calctime = (pindexBest->GetBlockTime() - timeFirstBlock) / fullCycle;
+        FirstBlockInCycle=timeFirstBlock + (fullCycle * calctime);
     }
-    printf("This is my_int: %I64d\n", FirstBlockInYear);
-    printf("This is my_int: %I64d\n", calctime);
-    int64_t oneDay = 86400; //один день в секундах
-    int64_t DayInMonth = oneDay * 13; //количество дней в одном месяце в секундах
-    int64_t FromFirstBlock = CurrentTime - FirstBlockInYear; //время с первого блока года до текущего момента в секундах
+    int64_t FromFirstBlock = pindexBest->GetBlockTime() - FirstBlockInCycle;
 
-    double MonthNum = FromFirstBlock/DayInMonth; //расчет номера месяца = время прошедшее со дня создания первого блока / на количество дней в месяце
 
-    printf("Номер месяца", MonthNum);
+        DayNum=FromFirstBlock / oneDay;//*/
 
-    if (MonthNum > 0 && MonthNum <= 1) //1 месяц
+
+    if (DayNum > 0 && DayNum <= 1)
     {
-        RitualReward = 52 * CENT * (13/10);
-    }else if (MonthNum > 1 && MonthNum <= 2 )
+        RitualReward =  67;
+    }else if (DayNum > 1 && DayNum <= 2 )
     {
-        RitualReward = 52 * CENT * (12/10);
-    }else if (MonthNum > 2 && MonthNum <= 3)
+        RitualReward =  62;
+    }else if (DayNum > 2 && DayNum <= 3)
     {
-        RitualReward = 52 * CENT * (11/10);
-    }else if (MonthNum > 3 && MonthNum <= 4)
+        RitualReward =  57;
+    }else if (DayNum > 3 && DayNum <= 4)
     {
-        RitualReward = 52 * CENT * (10/10);
-    }else if (MonthNum > 4 && MonthNum <= 5)
+        RitualReward =  52;
+    }else if (DayNum > 4 && DayNum <= 5)
     {
-        RitualReward = 52 * CENT * (9/10);
-    }else if (MonthNum > 5 && MonthNum <= 6)
+        RitualReward =  46;
+    }else if (DayNum > 5 && DayNum <= 6)
     {
-        RitualReward = 52 * CENT * (8/10);
-    }else if (MonthNum > 6 && MonthNum <= 7)
+        RitualReward =  41;
+    }else if (DayNum > 6 && DayNum <= 7)
     {
-        RitualReward = 52 * CENT * (7/10);
-    }else if (MonthNum > 7 && MonthNum <= 8)
+        RitualReward =  36;
+    }else if (DayNum > 7 && DayNum <= 8)
     {
-        RitualReward = 52 * CENT * (6/10);
-    }else if (MonthNum > 8 && MonthNum <= 9)
+        RitualReward =  31;
+    }else if (DayNum > 8 && DayNum <= 9)
     {
-        RitualReward = 52 * CENT * (5/10);
-    }else if (MonthNum > 9 && MonthNum <= 10)
+        RitualReward =  26;
+    }else if (DayNum > 9 && DayNum <= 10)
     {
-        RitualReward = 52 * CENT * (4/10);
-    }else if (MonthNum > 10 && MonthNum <= 11)
+        RitualReward =  20;
+    }else if (DayNum > 10 && DayNum <= 11)
     {
-        RitualReward = 52 * CENT * (3/10);
-    }else if (MonthNum > 11 && MonthNum <= 12)
+        RitualReward =  15;
+    }else if (DayNum > 11 && DayNum <= 12)
     {
-        RitualReward = 52 * CENT * (2/10);
-    }else if (MonthNum > 12 && MonthNum <= 13)
+        RitualReward =  10;
+    }else if (DayNum > 12 && DayNum <= 13)
     {
-        RitualReward = 52 * CENT * (1/10);
+        RitualReward =  5;
+    } else
+    {
+        RitualReward =  1;
     }
     return RitualReward;
 }
@@ -1121,10 +1116,10 @@ int64_t GetProofOfWorkReward(int nHeight, int64_t nFees)
 
     if(pindexBest->nHeight < 1)
     {
-        nSubsidy = 5200000 * CENT;
-    } else if (pindexBest->nHeight > 1 && pindexBest->nHeight < 1000)
+        nSubsidy = 770000 * COIN;
+    } else if (pindexBest->nHeight >= 1 && pindexBest->nHeight <= 1000)
     {
-    nSubsidy = 52 * CENT * (18/10);
+        nSubsidy =  10 * COIN;
     }
     return nSubsidy + nFees;
 }
@@ -1134,8 +1129,18 @@ int64_t GetProofOfWorkReward(int nHeight, int64_t nFees)
 int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nCoinAge, int64_t nFees)
 {
     int64_t nSubsidy;
-        nSubsidy = nCoinAge * COIN_YEAR_REWARD * 33 / (365 * 33 + 8);  //default 100% yearly
-    return nSubsidy + nFees + CalculateRewardRitual() + CalculateRewardCivic();
+    int ritual = CalculateRewardRitual();
+    int civic = CalculateRewardCivic();
+	    if(pindexBest->nHeight <= 1001)
+    {
+        nSubsidy = (nCoinAge * COIN_YEAR_REWARD * 33 / (365 * 33 + 8)) + (((ritual + civic)) * CENT);
+    } else if (pindexBest->nHeight >1001)
+    {
+        nSubsidy = (nCoinAge * COIN_YEAR_REWARD * 33 / (365 * 33 + 8)) + (((ritual + civic)/10) * CENT);  //default 15% yearly + bonus
+    }
+	
+        
+    return nSubsidy + nFees;
 
 }
 

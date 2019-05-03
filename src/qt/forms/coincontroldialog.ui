@@ -14,7 +14,7 @@
    <string>Coin Control</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-image: url(:/images/bkg);</string>
+   <string notr="true">background-image: url(:/images/bgb);</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -421,9 +421,6 @@
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(106, 131, 154);background-image: url(:/images/bgbfree);</string>
-         </property>
          <property name="text">
           <string>(un)select all</string>
          </property>
@@ -664,9 +661,6 @@
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(106, 131, 154);background-image: url(:/images/bgbfree);</string>
      </property>
      <property name="orientation">
       <enum>Qt::Horizontal</enum>

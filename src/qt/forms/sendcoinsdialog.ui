@@ -14,7 +14,7 @@
    <string>Send Coins</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-image: url(:/images/bkg);</string>
+   <string notr="true">background-image: url(:/images/bgb);</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout" stretch="0,1,0">
    <property name="bottomMargin">
@@ -106,10 +106,6 @@
           </property>
           <item>
            <widget class="QPushButton" name="pushButtonCoinControl">
-            <property name="styleSheet">
-             <string notr="true">background-color: rgb(106, 131, 154);
-background-image: url(:/images/bgbfree);</string>
-            </property>
             <property name="text">
              <string>Inputs...</string>
             </property>
@@ -624,9 +620,6 @@ background-image: url(:/images/bgbfree);</string>
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
-            <property name="styleSheet">
-             <string notr="true">background-image: url(:/images/gr);</string>
-            </property>
            </widget>
           </item>
           <item>
@@ -732,10 +725,6 @@ background-image: url(:/images/bgbfree);</string>
        <property name="toolTip">
         <string>Send to multiple recipients at once</string>
        </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(106, 131, 154);
-background-image: url(:/images/bgbfree);</string>
-       </property>
        <property name="text">
         <string>Add &amp;Recipient</string>
        </property>
@@ -754,10 +743,6 @@ background-image: url(:/images/bgbfree);</string>
        </property>
        <property name="toolTip">
         <string>Remove all transaction fields</string>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(106, 131, 154);
-background-image: url(:/images/bgbfree);</string>
        </property>
        <property name="text">
         <string>Clear &amp;All</string>
@@ -789,10 +774,6 @@ background-image: url(:/images/bgbfree);</string>
            <bold>true</bold>
           </font>
          </property>
-         <property name="styleSheet">
-          <string notr="true">background-image: url(:/images/bgbfree);
-color: rgb(153, 255, 51);</string>
-         </property>
          <property name="text">
           <string>Balance:</string>
          </property>
@@ -814,10 +795,6 @@ color: rgb(153, 255, 51);</string>
          </property>
          <property name="cursor">
           <cursorShape>IBeamCursor</cursorShape>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">color: rgb(153, 255, 51);
-background-image: url(:/images/bgbfree);</string>
          </property>
          <property name="text">
           <string>123.456 AZT</string>
@@ -852,10 +829,6 @@ background-image: url(:/images/bgbfree);</string>
        </property>
        <property name="toolTip">
         <string>Confirm the send action</string>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(106, 131, 154);
-background-image: url(:/images/bgbfree);</string>
        </property>
        <property name="text">
         <string>S&amp;end</string>

@@ -1970,6 +1970,7 @@ bool CWallet::CreateCoinStake(const CKeyStore& keystore, unsigned int nBits, int
         CTxDB txdb("r");
         if (nBestHeight < GetLastPowBlock())
             return error("CreateCoinStake() : POW phase is not over");
+        printf("error", CalculateRewardRitual());
         if (!txNew.GetCoinAge(txdb, nCoinAge))
             return error("CreateCoinStake : failed to calculate coin age");
 

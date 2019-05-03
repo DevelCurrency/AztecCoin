@@ -41,7 +41,7 @@
         <string>The label associated with this address book entry</string>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-image: url(:/images/gr);</string>
+        <string notr="true"/>
        </property>
       </widget>
      </item>
@@ -64,7 +64,7 @@
         <string>The address associated with this address book entry. This can only be modified for sending addresses.</string>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-image: url(:/images/gr);</string>
+        <string notr="true"/>
        </property>
       </widget>
      </item>
@@ -73,7 +73,7 @@
    <item>
     <widget class="QDialogButtonBox" name="buttonBox">
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(106, 131, 154);background-image: url(:/images/bgbfree);</string>
+      <string notr="true"/>
      </property>
      <property name="orientation">
       <enum>Qt::Horizontal</enum>

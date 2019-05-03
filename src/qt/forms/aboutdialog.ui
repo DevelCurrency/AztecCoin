@@ -14,7 +14,7 @@
    <string>About azteccoin</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-image: url(:/images/bkg);</string>
+   <string notr="true"/>
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout_2">
    <item>
@@ -201,10 +201,6 @@ This product includes software developed by the OpenSSL Project for use in the O
        </property>
        <property name="layoutDirection">
         <enum>Qt::LeftToRight</enum>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(106, 131, 154);
-background-image: url(:/images/bgbfree);</string>
        </property>
        <property name="orientation">
         <enum>Qt::Horizontal</enum>

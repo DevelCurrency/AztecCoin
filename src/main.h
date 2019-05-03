@@ -46,12 +46,12 @@ static const int64_t MIN_TX_FEE = 10000;
 /** Fees smaller than this (in satoshi) are considered zero fee (for relaying) */
 static const int64_t MIN_RELAY_TX_FEE = MIN_TX_FEE;
 /** No amount larger than this (in satoshi) is valid */
-static const int64_t MAX_MONEY = 52000000 * COIN;
+static const int64_t MAX_MONEY = 5200000 * COIN;
 inline bool MoneyRange(int64_t nValue) { return (nValue >= 0 && nValue <= MAX_MONEY); }
 /** Threshold for nLockTime: below this value it is interpreted as block number, otherwise as UNIX timestamp. */
 static const unsigned int LOCKTIME_THRESHOLD = 500000000; // Tue Nov  5 00:53:20 1985 UTC
 
-static const int64_t COIN_YEAR_REWARD = 10 * CENT; //10% per year
+static const int64_t COIN_YEAR_REWARD = 15 * CENT; //15% per year
 
 inline bool IsProtocolV1RetargetingFixed(int nHeight) { return TestNet() || nHeight > 10; } 
 inline bool IsProtocolV2(int nHeight) { return TestNet() || nHeight > 0; } 
@@ -136,6 +136,9 @@ void ThreadImport(std::vector<boost::filesystem::path> vImportFiles);
 bool CheckProofOfWork(uint256 hash, unsigned int nBits);
 unsigned int GetNextTargetRequired(const CBlockIndex* pindexLast, bool fProofOfStake);
 int GetLastPowBlock();
+int CalculateRewardCivic();
+int CalculateRewardRitual();
+
 int LastPowBlockcontrol();
 extern unsigned int GetnStakeMinAge();
 int64_t GetProofOfWorkReward(int nHeight, int64_t nFees);

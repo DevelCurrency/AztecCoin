@@ -13,9 +13,6 @@
   <property name="windowTitle">
    <string>QR Code Dialog</string>
   </property>
-  <property name="styleSheet">
-   <string notr="true">background-image: url(:/images/bkg);</string>
-  </property>
   <layout class="QVBoxLayout" name="verticalLayout_3">
    <item>
     <widget class="QLabel" name="lblQRCode">
@@ -110,7 +107,7 @@
         <item row="1" column="1">
          <widget class="QLineEdit" name="lnLabel">
           <property name="styleSheet">
-           <string notr="true">background-image: url(:/images/gr);</string>
+           <string notr="true"/>
           </property>
          </widget>
         </item>
@@ -132,8 +129,8 @@
         </item>
         <item row="2" column="1">
          <widget class="QLineEdit" name="lnMessage">
-          <property name="styleSheet">
-           <string notr="true">background-image: url(:/images/gr);</string>
+          <property name="autoFillBackground">
+           <bool>false</bool>
           </property>
          </widget>
         </item>
@@ -171,7 +168,7 @@
            </size>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-image: url(:/images/gr);</string>
+           <string notr="true"/>
           </property>
          </widget>
         </item>
@@ -194,9 +191,6 @@
         </item>
         <item>
          <widget class="QPushButton" name="btnSaveAs">
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(106, 131, 154);</string>
-          </property>
           <property name="text">
            <string>&amp;Save As...</string>
           </property>

@@ -1,23 +1,17 @@
 azteccoin development tree
 
-azteccoin - Crypto currency is based on PoW / PoS.
+azteccoin - Crypto currency is based on pure PoS.
 ===========================
 
 Algorithm: scrypt
 
-Total coin supply:4500000
+Total coin supply:5200000
 
-Pre-mine:300000 AZT ~ 6% 
+Pre-mine:780000 AZT ~ 15%
 
-Coinbase maturity:120 Blocks
+Coinbase maturity:80 Blocks
 
 Confirmations:10 Blocks
-
-PoW reward: 3 coins reward per block
-
-after block 100800 reward: 1.5 coins per block
-
-After block 201600 reward: 0.75 conins per block
 
 (Started on 1-st block
 Transition to PoS after the next 10080 PoS blocks)
