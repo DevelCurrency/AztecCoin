@@ -10,7 +10,7 @@ AztecCoin - Crypto currency is based on pure PoS.
 ===========================
 
 Algorithm: scrypt <BR>
-Total coin supply:5 200 000<BR>
+Total coin supply:5 200 000 AZT<BR>
 Pre-mine: 780 000 AZT ~ 15% <BR>
 Coinbase maturity:80 Blocks<BR>
 Confirmations:10 Blocks<BR>
