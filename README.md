@@ -1,7 +1,10 @@
 AztecCoin development team is present!
 ===========================
-
 [![Build Status](https://api.travis-ci.org/DevelCurrency/AztecCoin.svg?branch=master)](https://travis-ci.org/DevelCurrency/AztecCoin)
+===========================
+![img](https://github.com/DevelCurrency/AztecCoin/blob/master/src/qt/res/images/bkg.png)
+
+
 
 AztecCoin - Crypto currency is based on pure PoS.
 ===========================
