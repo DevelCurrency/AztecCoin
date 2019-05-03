@@ -1,4 +1,5 @@
-azteccoin 
+AztecCoin development team is present!
+===========================
 
 [![Build Status](https://api.travis-ci.org/DevelCurrency/AztecCoin.svg?branch=master)](https://travis-ci.org/DevelCurrency/AztecCoin)
 
