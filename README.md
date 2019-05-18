@@ -15,10 +15,13 @@ Pre-mine: 1 000 000 AZT ~ 15% <BR>
 Coinbase maturity:50 Blocks<BR>
 Confirmations:10 Blocks<BR>
 Last Pow Block 1000<BR>
+  
 ===========================
+
 PoG interest:
 reward from Civic calendar bonus + reward from Ritual calendar bonus<BR>
 (Mining begins under certain conditions in the game)
+  
 ===========================
 
 Civil calendar 365 days -18 month / 20 days in each month
