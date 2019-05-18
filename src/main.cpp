@@ -43,7 +43,7 @@ int LAST_POW_BLOCK;
 unsigned int nStakeMinAge; // min age is 8 hours
 unsigned int nModifierInterval = 10 * 60; // time to elapse before new modifier is computed
 
-int nCoinbaseMaturity = 79;
+int nCoinbaseMaturity = 49;
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
 
@@ -1060,7 +1060,7 @@ int CalculateRewardRitual()
     int64_t FromFirstBlock = pindexBest->GetBlockTime() - FirstBlockInCycle;
 
 
-        DayNum=FromFirstBlock / oneDay;//*/
+        DayNum=FromFirstBlock / oneDay;
 
 
     if (DayNum > 0 && DayNum <= 1)
@@ -1108,7 +1108,7 @@ int CalculateRewardRitual()
     }
     return RitualReward;
 }
-
+//*/
 // miner's coin base reward
 int64_t GetProofOfWorkReward(int nHeight, int64_t nFees)
 {
@@ -1116,8 +1116,8 @@ int64_t GetProofOfWorkReward(int nHeight, int64_t nFees)
 
     if(pindexBest->nHeight < 1)
     {
-        nSubsidy = 770000 * COIN;
-    } else if (pindexBest->nHeight >= 1 && pindexBest->nHeight <= 1000)
+        nSubsidy = 990000 * COIN;
+        } else if (pindexBest->nHeight >= 1 && pindexBest->nHeight <= 1000)
     {
         nSubsidy =  10 * COIN;
     }
@@ -1129,17 +1129,7 @@ int64_t GetProofOfWorkReward(int nHeight, int64_t nFees)
 int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nCoinAge, int64_t nFees)
 {
     int64_t nSubsidy;
-    int ritual = CalculateRewardRitual();
-    int civic = CalculateRewardCivic();
-	    if(pindexBest->nHeight <= 1001)
-    {
-        nSubsidy = (nCoinAge * COIN_YEAR_REWARD * 33 / (365 * 33 + 8)) + (((ritual + civic)) * CENT);
-    } else if (pindexBest->nHeight >1001)
-    {
-        nSubsidy = (nCoinAge * COIN_YEAR_REWARD * 33 / (365 * 33 + 8)) + (((ritual + civic)/10) * CENT);  //default 15% yearly + bonus
-    }
-	
-        
+        nSubsidy = 0 * COIN;
     return nSubsidy + nFees;
 
 }

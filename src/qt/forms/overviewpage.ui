@@ -497,8 +497,11 @@
           </item>
           <item>
            <widget class="QListView" name="listTransactions">
+            <property name="autoFillBackground">
+             <bool>false</bool>
+            </property>
             <property name="styleSheet">
-             <string notr="true">background-color: rgba(106, 131, 154, 101);</string>
+             <string notr="true">background-image: url(:/images/bgb);</string>
             </property>
             <property name="frameShape">
              <enum>QFrame::NoFrame</enum>
