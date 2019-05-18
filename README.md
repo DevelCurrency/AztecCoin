@@ -7,7 +7,7 @@ AztecCoin development team is present!
 <hr>
 
 
-AztecCoin - Crypto currency is based on PoG (Proof Of Game).
+AztecCoin - PoG (Proof Of Game) cryptocurrency.
 ===========================
 
 Algorithm: scrypt <BR>
