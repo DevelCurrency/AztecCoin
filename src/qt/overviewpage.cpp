@@ -51,22 +51,22 @@ public:
             foreground = qvariant_cast<QColor>(value);
         }
 
-        painter->setPen(fUseBlackTheme ? QColor(255, 255, 255) : foreground);
+        painter->setPen(fUseBlackTheme ? QColor(0, 0, 0) : foreground);
         painter->drawText(addressRect, Qt::AlignLeft|Qt::AlignVCenter, address);
 
         if(amount < 0)
         {
-            foreground = COLOR_NEGATIVE;
+            foreground = QColor(0, 0, 0);
         }
         else if(!confirmed)
         {
-            foreground = COLOR_UNCONFIRMED;
+            foreground = QColor(0, 0, 0);
         }
         else
         {
-            foreground = option.palette.color(QPalette::Text);
+            foreground = QColor(0, 0, 0);
         }
-        painter->setPen(fUseBlackTheme ? QColor(255, 255, 255) : foreground);
+        painter->setPen(fUseBlackTheme ? QColor(0, 0, 0) : foreground);
         QString amountText = BitcoinUnits::formatWithUnit(unit, amount, true);
         if(!confirmed)
         {

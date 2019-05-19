@@ -959,156 +959,7 @@ unsigned int GetnStakeMinAge()
     return nStakeMinAge;
 }
 
-int CalculateRewardCivic()
-{
-    int CivicReward;
-    int64_t FirstBlockYear;
-    int64_t TimeFirstBlockinYear;
-    double MonthNum;
-    int64_t timeFirstBlock = pindexGenesisBlock->GetBlockTime();
-    int64_t OneYear = 365 * 24 * 60 * 60;
-    int64_t oneDay = 86400;
-    int64_t OneMonthDays = oneDay * 20;
-        if ((pindexBest->GetBlockTime() -  timeFirstBlock) <= OneYear)
-        {
-            FirstBlockYear=pindexGenesisBlock->GetBlockTime();
-        }else
-        {
-            int64_t calctime = (pindexBest->GetBlockTime() - timeFirstBlock) / OneYear;
-            FirstBlockYear=pindexGenesisBlock->GetBlockTime() + (OneYear * calctime);
-        }
-        TimeFirstBlockinYear = pindexBest->GetBlockTime() - FirstBlockYear;
-        MonthNum = TimeFirstBlockinYear/OneMonthDays;
 
-    if (MonthNum > 0 && MonthNum <= 1)
-    {
-        CivicReward =  93;
-    }else if (MonthNum > 1 && MonthNum <= 2 )
-    {
-        CivicReward =  88;
-    }else if (MonthNum > 2 && MonthNum <= 3)
-    {
-        CivicReward =  83;
-    }else if (MonthNum > 3 && MonthNum <= 4)
-    {
-        CivicReward =  78;
-    }else if (MonthNum > 4 && MonthNum <= 5)
-    {
-        CivicReward =  72;
-    }else if (MonthNum > 5 && MonthNum <= 6)
-    {
-        CivicReward =  67;
-    }else if (MonthNum > 6 && MonthNum <= 7)
-    {
-        CivicReward =  62;
-    }else if (MonthNum > 7 && MonthNum <= 8)
-    {
-        CivicReward =  57;
-    }else if (MonthNum > 8 && MonthNum <= 9)
-    {
-        CivicReward =  52;
-    }else if (MonthNum > 9 && MonthNum <= 10)
-    {
-        CivicReward =  46;
-    }else if (MonthNum > 10 && MonthNum <= 11)
-    {
-        CivicReward =  41;
-    }else if (MonthNum > 11 && MonthNum <= 12)
-    {
-        CivicReward =  36;
-    }else if (MonthNum > 12 && MonthNum <= 13)
-    {
-        CivicReward =  31;
-    }else if (MonthNum > 13 && MonthNum <= 14)
-    {
-        CivicReward =  26;
-    }else if (MonthNum > 14 && MonthNum <= 15)
-    {
-        CivicReward =  20;
-    }else if (MonthNum > 15 && MonthNum <= 16)
-    {
-        CivicReward =  15;
-    }else if (MonthNum > 16 && MonthNum <= 17)
-    {
-        CivicReward =  10;
-    }else if (MonthNum > 17 && MonthNum <= 18)
-    {
-        CivicReward =  5;
-    }else
-    {
-        CivicReward =  3;
-    }
-    return CivicReward;
-}
-
-int CalculateRewardRitual()
-{
-    int RitualReward;
-    int64_t FirstBlockInCycle;
-    double DayNum;
-    int64_t timeFirstBlock = pindexGenesisBlock->GetBlockTime();
-    int64_t oneDay = 86400;
-    int64_t fullCycle = oneDay * 13;
-    if ((pindexBest->GetBlockTime() -  timeFirstBlock) <= fullCycle)
-    {
-        FirstBlockInCycle=pindexGenesisBlock->GetBlockTime();
-    }else
-    {
-        int64_t calctime = (pindexBest->GetBlockTime() - timeFirstBlock) / fullCycle;
-        FirstBlockInCycle=timeFirstBlock + (fullCycle * calctime);
-    }
-    int64_t FromFirstBlock = pindexBest->GetBlockTime() - FirstBlockInCycle;
-
-
-        DayNum=FromFirstBlock / oneDay;
-
-
-    if (DayNum > 0 && DayNum <= 1)
-    {
-        RitualReward =  67;
-    }else if (DayNum > 1 && DayNum <= 2 )
-    {
-        RitualReward =  62;
-    }else if (DayNum > 2 && DayNum <= 3)
-    {
-        RitualReward =  57;
-    }else if (DayNum > 3 && DayNum <= 4)
-    {
-        RitualReward =  52;
-    }else if (DayNum > 4 && DayNum <= 5)
-    {
-        RitualReward =  46;
-    }else if (DayNum > 5 && DayNum <= 6)
-    {
-        RitualReward =  41;
-    }else if (DayNum > 6 && DayNum <= 7)
-    {
-        RitualReward =  36;
-    }else if (DayNum > 7 && DayNum <= 8)
-    {
-        RitualReward =  31;
-    }else if (DayNum > 8 && DayNum <= 9)
-    {
-        RitualReward =  26;
-    }else if (DayNum > 9 && DayNum <= 10)
-    {
-        RitualReward =  20;
-    }else if (DayNum > 10 && DayNum <= 11)
-    {
-        RitualReward =  15;
-    }else if (DayNum > 11 && DayNum <= 12)
-    {
-        RitualReward =  10;
-    }else if (DayNum > 12 && DayNum <= 13)
-    {
-        RitualReward =  5;
-    } else
-    {
-        RitualReward =  1;
-    }
-    return RitualReward;
-}
-//*/
 // miner's coin base reward
 int64_t GetProofOfWorkReward(int nHeight, int64_t nFees)
 {
@@ -1117,9 +968,12 @@ int64_t GetProofOfWorkReward(int nHeight, int64_t nFees)
     if(pindexBest->nHeight < 1)
     {
         nSubsidy = 990000 * COIN;
-        } else if (pindexBest->nHeight >= 1 && pindexBest->nHeight <= 1000)
+    } else if (pindexBest->nHeight >= 1 && pindexBest->nHeight <= 1000)
     {
         nSubsidy =  10 * COIN;
+    }else 
+    {
+        nSubsidy =  0 * COIN;
     }
     return nSubsidy + nFees;
 }
@@ -1129,7 +983,13 @@ int64_t GetProofOfWorkReward(int nHeight, int64_t nFees)
 int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nCoinAge, int64_t nFees)
 {
     int64_t nSubsidy;
-        nSubsidy = 0 * COIN;
+     if (pindexBest->nHeight > 1000 && pindexBest->nHeight <= 1001)
+    {
+        nSubsidy =  10 * COIN;
+    } else 
+	{
+		nSubsidy = 0 * COIN;
+    }    
     return nSubsidy + nFees;
 
 }

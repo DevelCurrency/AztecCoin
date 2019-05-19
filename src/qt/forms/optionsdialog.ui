@@ -451,11 +451,17 @@
        </item>
        <item>
         <widget class="QCheckBox" name="useBlackTheme">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
          <property name="styleSheet">
           <string notr="true">background-image: url(:/images/bgbfree);</string>
          </property>
          <property name="text">
           <string>Use black visual theme (requires restart)</string>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
          </property>
         </widget>
        </item>
